@@ -61,29 +61,13 @@ router.post('/edit/:id', async (req, res) => {
   res.redirect('/adminpage');
 })
 
-// router.post('/search', async (req, res) => {
-//   var keyword = req.body.name;
-//   //relative search
-//   var adminpage = await adminpageModel.find({ name: new RegExp(keyword, "i") });
-//   var beltkr = await beltkrModel.find({ name: new RegExp(keyword, "i") });
-//   var weaponkr = await weaponkrModel.find({ name: new RegExp(keyword, "i") });
-//   res.render('adminpage/index', { adminpage: adminpage, beltkr: beltkr, weaponkr: weaponkr });
-// })
-
-// router.get('/nameasc', async (req, res) => {
-//   //1: ascending,  -1: descending
-//   var adminpage = await adminpageModel.find().sort({ name: 1 });
-//   var beltkr = await beltkrModel.find().sort({ name: 1 });
-//   var weaponkr = await weaponkrModel.find().sort({ name: 1 });
-//   res.render('adminpage/index', { adminpage: adminpage, beltkr: beltkr, weaponkr: weaponkr });
-// })
-
-// router.get('/namedesc', async (req, res) => {
-//   var adminpage = await adminpageModel.find().sort({ name: -1 });
-//   var beltkr = await beltkrModel.find().sort({ name: -1 });
-//   var weaponkr = await weaponkrModel.find().sort({ name: -1 });
-//   res.render('adminpage/index', { adminpage: adminpage, beltkr: beltkr, weaponkr: weaponkr });
-// })
-
+router.post('/search', async (req, res) => {
+  var keyword = req.body.name;
+  //relative search
+  var adminpage = await adminpageModel.find({ name: new RegExp(keyword, "i") });
+  var beltkr = await beltkrModel.find({ name: new RegExp(keyword, "i") });
+  var weaponkr = await weaponkrModel.find({ name: new RegExp(keyword, "i") });
+  res.render('adminpage/index', { adminpage: adminpage, beltkr: beltkr, weaponkr: weaponkr });
+})
 
 module.exports = router;

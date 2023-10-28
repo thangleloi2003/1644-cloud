@@ -22,9 +22,9 @@ mongoose.connect(uri)
   .catch((err) => console.log(err));
 
 //khai báo và cấu hình thư viện dateFormat, equal cho hbs
-var hbs = require('hbs');
-hbs.registerHelper('equal', require('handlebars-helper-equal'));
-hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+// var hbs = require('hbs');
+// // hbs.registerHelper('equal', require('handlebars-helper-equal'));
+// hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
